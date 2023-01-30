@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "expert-belt"
+version = "0.1.0"
+description = ""
+authors = ["Beanie <thatguyin@beanie.gg>"]
+readme = "README.md"
+packages = [{include = "expert_belt"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.1.5"
+djangorestframework = "^3.14.0"
+django-cors-headers = "^3.13.0"
+django-environ = "^0.9.0"
+django-extensions = "^3.2.1"
+django-filter = "^22.1"
+drf-nested-routers = "^0.93.4"
+boto3 = "^1.26.59"
+psycopg2-binary = "^2.9.5"
+django-cockroachdb = "^4.1.1"
+drf-spectacular = "^0.25.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = {version = "^23.1a1", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
