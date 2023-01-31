@@ -8,7 +8,8 @@
 		"vscode": {
 			"extensions": [
 				"mtxr.sqltools-driver-pg",
-				"mtxr.sqltools"
+				"mtxr.sqltools",
+				"ms-python.flake8"
 			]
 		}
 	},
