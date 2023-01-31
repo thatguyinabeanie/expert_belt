@@ -11,6 +11,7 @@
           "connectString": "UPDATE"
         }
     ],
+    "python.defaultInterpreterPath": "/home/codespace/.cache/pypoetry/virtualenvs/expert-belt-diSdQsLU-py3.10/bin/python",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
