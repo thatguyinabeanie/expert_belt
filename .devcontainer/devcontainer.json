@@ -9,7 +9,9 @@
 			"extensions": [
 				"mtxr.sqltools-driver-pg",
 				"mtxr.sqltools",
-				"ms-python.flake8"
+				"ms-python.flake8",
+				"ms-python.black-formatter",
+				"ms-python.python"
 			]
 		}
 	},
