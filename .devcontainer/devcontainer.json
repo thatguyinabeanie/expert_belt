@@ -8,7 +8,11 @@
 		"vscode": {
 			"extensions": [
 				"mtxr.sqltools-driver-pg",
-				"mtxr.sqltools"
+				"mtxr.sqltools",
+				"ms-python.python",
+				"ms-python.isort",
+				"ms-python.vscode-pylance",
+				"eamodio.gitlens"
 			]
 		}
 	}
