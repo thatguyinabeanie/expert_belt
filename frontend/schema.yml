@@ -1,0 +1,1517 @@
+openapi: 3.0.3
+info:
+  title: VGC Data
+  version: 0.1.0
+  description: API documentation for VGC Data
+paths:
+  /api/formats/:
+    get:
+      operationId: formats_list
+      tags:
+      - formats
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Format'
+          description: ''
+    post:
+      operationId: formats_create
+      tags:
+      - formats
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FormatRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FormatRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FormatRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Format'
+          description: ''
+  /api/formats/{name}/:
+    get:
+      operationId: formats_retrieve
+      parameters:
+      - in: path
+        name: name
+        schema:
+          type: string
+        description: A unique value identifying this format.
+        required: true
+      tags:
+      - formats
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Format'
+          description: ''
+    put:
+      operationId: formats_update
+      parameters:
+      - in: path
+        name: name
+        schema:
+          type: string
+        description: A unique value identifying this format.
+        required: true
+      tags:
+      - formats
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FormatRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FormatRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/FormatRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Format'
+          description: ''
+    patch:
+      operationId: formats_partial_update
+      parameters:
+      - in: path
+        name: name
+        schema:
+          type: string
+        description: A unique value identifying this format.
+        required: true
+      tags:
+      - formats
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedFormatRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedFormatRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedFormatRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Format'
+          description: ''
+    delete:
+      operationId: formats_destroy
+      parameters:
+      - in: path
+        name: name
+        schema:
+          type: string
+        description: A unique value identifying this format.
+        required: true
+      tags:
+      - formats
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/groups/:
+    get:
+      operationId: groups_list
+      description: API endpoint that allows groups to be viewed or edited.
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Group'
+          description: ''
+    post:
+      operationId: groups_create
+      description: API endpoint that allows groups to be viewed or edited.
+      tags:
+      - groups
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GroupRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+          description: ''
+  /api/groups/{id}/:
+    get:
+      operationId: groups_retrieve
+      description: API endpoint that allows groups to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this group.
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+          description: ''
+    put:
+      operationId: groups_update
+      description: API endpoint that allows groups to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this group.
+        required: true
+      tags:
+      - groups
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/GroupRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GroupRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+          description: ''
+    patch:
+      operationId: groups_partial_update
+      description: API endpoint that allows groups to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this group.
+        required: true
+      tags:
+      - groups
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedGroupRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedGroupRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedGroupRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+          description: ''
+    delete:
+      operationId: groups_destroy
+      description: API endpoint that allows groups to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this group.
+        required: true
+      tags:
+      - groups
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/organizers/:
+    get:
+      operationId: organizers_list
+      tags:
+      - organizers
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Organizer'
+          description: ''
+    post:
+      operationId: organizers_create
+      tags:
+      - organizers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrganizerRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/OrganizerRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/OrganizerRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organizer'
+          description: ''
+  /api/organizers/{id}/:
+    get:
+      operationId: organizers_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        description: A unique value identifying this organizer.
+        required: true
+      tags:
+      - organizers
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organizer'
+          description: ''
+    put:
+      operationId: organizers_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        description: A unique value identifying this organizer.
+        required: true
+      tags:
+      - organizers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrganizerRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/OrganizerRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/OrganizerRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organizer'
+          description: ''
+    patch:
+      operationId: organizers_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        description: A unique value identifying this organizer.
+        required: true
+      tags:
+      - organizers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedOrganizerRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedOrganizerRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedOrganizerRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organizer'
+          description: ''
+    delete:
+      operationId: organizers_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        description: A unique value identifying this organizer.
+        required: true
+      tags:
+      - organizers
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/players/:
+    get:
+      operationId: players_list
+      tags:
+      - players
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Player'
+          description: ''
+    post:
+      operationId: players_create
+      tags:
+      - players
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlayerRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PlayerRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PlayerRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Player'
+          description: ''
+  /api/players/{name}/:
+    get:
+      operationId: players_retrieve
+      parameters:
+      - in: path
+        name: name
+        schema:
+          type: string
+        description: A unique value identifying this player.
+        required: true
+      tags:
+      - players
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Player'
+          description: ''
+    put:
+      operationId: players_update
+      parameters:
+      - in: path
+        name: name
+        schema:
+          type: string
+        description: A unique value identifying this player.
+        required: true
+      tags:
+      - players
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlayerRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PlayerRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PlayerRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Player'
+          description: ''
+    patch:
+      operationId: players_partial_update
+      parameters:
+      - in: path
+        name: name
+        schema:
+          type: string
+        description: A unique value identifying this player.
+        required: true
+      tags:
+      - players
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedPlayerRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedPlayerRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedPlayerRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Player'
+          description: ''
+    delete:
+      operationId: players_destroy
+      parameters:
+      - in: path
+        name: name
+        schema:
+          type: string
+        description: A unique value identifying this player.
+        required: true
+      tags:
+      - players
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/records/:
+    get:
+      operationId: records_list
+      tags:
+      - records
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Record'
+          description: ''
+    post:
+      operationId: records_create
+      tags:
+      - records
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecordRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/RecordRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RecordRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Record'
+          description: ''
+  /api/records/{id}/:
+    get:
+      operationId: records_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this record.
+        required: true
+      tags:
+      - records
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Record'
+          description: ''
+    put:
+      operationId: records_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this record.
+        required: true
+      tags:
+      - records
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecordRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/RecordRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RecordRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Record'
+          description: ''
+    patch:
+      operationId: records_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this record.
+        required: true
+      tags:
+      - records
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedRecordRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedRecordRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedRecordRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Record'
+          description: ''
+    delete:
+      operationId: records_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this record.
+        required: true
+      tags:
+      - records
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/tournaments/:
+    get:
+      operationId: tournaments_list
+      tags:
+      - tournaments
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tournament'
+          description: ''
+    post:
+      operationId: tournaments_create
+      tags:
+      - tournaments
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TournamentRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TournamentRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TournamentRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tournament'
+          description: ''
+  /api/tournaments/{tournament_id}/:
+    get:
+      operationId: tournaments_retrieve
+      parameters:
+      - in: path
+        name: tournament_id
+        schema:
+          type: string
+        description: A unique value identifying this tournament.
+        required: true
+      tags:
+      - tournaments
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tournament'
+          description: ''
+    put:
+      operationId: tournaments_update
+      parameters:
+      - in: path
+        name: tournament_id
+        schema:
+          type: string
+        description: A unique value identifying this tournament.
+        required: true
+      tags:
+      - tournaments
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TournamentRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TournamentRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TournamentRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tournament'
+          description: ''
+    patch:
+      operationId: tournaments_partial_update
+      parameters:
+      - in: path
+        name: tournament_id
+        schema:
+          type: string
+        description: A unique value identifying this tournament.
+        required: true
+      tags:
+      - tournaments
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedTournamentRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedTournamentRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedTournamentRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tournament'
+          description: ''
+    delete:
+      operationId: tournaments_destroy
+      parameters:
+      - in: path
+        name: tournament_id
+        schema:
+          type: string
+        description: A unique value identifying this tournament.
+        required: true
+      tags:
+      - tournaments
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/users/:
+    get:
+      operationId: users_list
+      description: API endpoint that allows users to be viewed or edited.
+      tags:
+      - users
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+          description: ''
+    post:
+      operationId: users_create
+      description: API endpoint that allows users to be viewed or edited.
+      tags:
+      - users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+  /api/users/{id}/:
+    get:
+      operationId: users_retrieve
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this user.
+        required: true
+      tags:
+      - users
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    put:
+      operationId: users_update
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this user.
+        required: true
+      tags:
+      - users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    patch:
+      operationId: users_partial_update
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this user.
+        required: true
+      tags:
+      - users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUserRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUserRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUserRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    delete:
+      operationId: users_destroy
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this user.
+        required: true
+      tags:
+      - users
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    Format:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 100
+        label:
+          type: string
+          nullable: true
+          maxLength: 100
+    FormatRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+        label:
+          type: string
+          nullable: true
+          maxLength: 100
+    GameEnum:
+      enum:
+      - VGC
+      type: string
+    Group:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+          readOnly: true
+        name:
+          type: string
+          maxLength: 150
+      required:
+      - name
+      - url
+    GroupRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 150
+      required:
+      - name
+    NameOnlyOrganizer:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 100
+      required:
+      - name
+    NameOnlyOrganizerRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+      required:
+      - name
+    Organizer:
+      type: object
+      properties:
+        id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        name:
+          type: string
+          maxLength: 100
+      required:
+      - name
+    OrganizerRequest:
+      type: object
+      properties:
+        id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+      required:
+      - name
+    PatchedFormatRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+        label:
+          type: string
+          nullable: true
+          maxLength: 100
+    PatchedGroupRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 150
+    PatchedOrganizerRequest:
+      type: object
+      properties:
+        id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+    PatchedPlayerRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+    PatchedRecordRequest:
+      type: object
+      properties:
+        player:
+          type: string
+          minLength: 1
+        wins:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        losses:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        ties:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        drop:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        placing:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        tournament:
+          $ref: '#/components/schemas/TournamentRecordRequest'
+    PatchedTournamentRequest:
+      type: object
+      properties:
+        tournament_id:
+          type: string
+          minLength: 1
+          maxLength: 100
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+        game:
+          $ref: '#/components/schemas/GameEnum'
+        player_count:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        format:
+          type: string
+          minLength: 1
+          maxLength: 100
+        date:
+          type: string
+          format: date-time
+        organizer:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+    PatchedUserRequest:
+      type: object
+      properties:
+        username:
+          type: string
+          minLength: 1
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        email:
+          type: string
+          format: email
+          title: Email address
+          maxLength: 254
+        groups:
+          type: array
+          items:
+            type: integer
+          description: The groups this user belongs to. A user will get all permissions
+            granted to each of their groups.
+    Player:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 100
+    PlayerRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+    Record:
+      type: object
+      properties:
+        player:
+          type: string
+        wins:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        losses:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        ties:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        drop:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        placing:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        tournament:
+          $ref: '#/components/schemas/TournamentRecord'
+      required:
+      - tournament
+    RecordRequest:
+      type: object
+      properties:
+        player:
+          type: string
+          minLength: 1
+        wins:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        losses:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        ties:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        drop:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        placing:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        tournament:
+          $ref: '#/components/schemas/TournamentRecordRequest'
+      required:
+      - tournament
+    Tournament:
+      type: object
+      properties:
+        tournament_id:
+          type: string
+          maxLength: 100
+        name:
+          type: string
+          maxLength: 100
+        game:
+          $ref: '#/components/schemas/GameEnum'
+        player_count:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        format:
+          type: string
+          maxLength: 100
+        date:
+          type: string
+          format: date-time
+        organizer:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+      required:
+      - tournament_id
+    TournamentRecord:
+      type: object
+      properties:
+        tournament_id:
+          type: string
+          maxLength: 100
+        name:
+          type: string
+          maxLength: 100
+        organizer:
+          $ref: '#/components/schemas/NameOnlyOrganizer'
+      required:
+      - organizer
+      - tournament_id
+    TournamentRecordRequest:
+      type: object
+      properties:
+        tournament_id:
+          type: string
+          minLength: 1
+          maxLength: 100
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+        organizer:
+          $ref: '#/components/schemas/NameOnlyOrganizerRequest'
+      required:
+      - organizer
+      - tournament_id
+    TournamentRequest:
+      type: object
+      properties:
+        tournament_id:
+          type: string
+          minLength: 1
+          maxLength: 100
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+        game:
+          $ref: '#/components/schemas/GameEnum'
+        player_count:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        format:
+          type: string
+          minLength: 1
+          maxLength: 100
+        date:
+          type: string
+          format: date-time
+        organizer:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+      required:
+      - tournament_id
+    User:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+          readOnly: true
+        username:
+          type: string
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        email:
+          type: string
+          format: email
+          title: Email address
+          maxLength: 254
+        groups:
+          type: array
+          items:
+            type: integer
+          description: The groups this user belongs to. A user will get all permissions
+            granted to each of their groups.
+      required:
+      - url
+      - username
+    UserRequest:
+      type: object
+      properties:
+        username:
+          type: string
+          minLength: 1
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        email:
+          type: string
+          format: email
+          title: Email address
+          maxLength: 254
+        groups:
+          type: array
+          items:
+            type: integer
+          description: The groups this user belongs to. A user will get all permissions
+            granted to each of their groups.
+      required:
+      - username
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
