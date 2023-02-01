@@ -106,6 +106,7 @@ ALLOWED_HOSTS = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
+    "https://thatguyinabeanie-cuddly-fortnight-wrv7jgp5jr63jxp-8000.preview.app.github.dev",
     "http://localhost:3000",
     "https://vgc-data-frontend.onrender.com",
 ]
@@ -125,8 +126,8 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "VGC Data",
-    "DESCRIPTION": "API documentation for VGC Data",
+    "TITLE": "Expert Belt API",
+    "DESCRIPTION": "API Documentation Expert Belt",
     "VERSION": "0.1.0",
     "SERVE_INCLUDE_SCHEMA": False,
     "COMPONENT_SPLIT_REQUEST": True
@@ -166,6 +167,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+STATIC_ROOT = BASE_DIR / "static"
 
 STATIC_URL = "static/"
 
