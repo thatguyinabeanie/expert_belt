@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    # "whitenoise.middleware.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "corsheaders.middleware.CorsMiddleware",
@@ -99,13 +99,10 @@ DATABASES = {
     },
 }
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "vgc-data-app.onrender.com",
-]
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 CORS_ORIGIN_WHITELIST = [
+    "https://thatguyinabeanie-cuddly-fortnight-wrv7jgp5jr63jxp-8000.preview.app.github.dev",
     "http://localhost:3000",
     "https://vgc-data-frontend.onrender.com",
 ]
@@ -113,10 +110,10 @@ CORS_ORIGIN_WHITELIST = [
 CORS_ALLOW_METHODS = ["GET"]
 
 REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-    # "DEFAULT_PERMISSION_CLASSES": [
-    #     "rest_framework_api_key.permissions.HasAPIKey",
-    # ],
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 200,
     "DEFAULT_RENDERER_CLASSES": ("rest_framework.renderers.JSONRenderer",),
@@ -125,8 +122,8 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "VGC Data",
-    "DESCRIPTION": "API documentation for VGC Data",
+    "TITLE": "Expert Belt API",
+    "DESCRIPTION": "API Documentation Expert Belt",
     "VERSION": "0.1.0",
     "SERVE_INCLUDE_SCHEMA": False,
     "COMPONENT_SPLIT_REQUEST": True
@@ -166,8 +163,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+STATIC_ROOT = BASE_DIR / "static"
 
 STATIC_URL = "static/"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

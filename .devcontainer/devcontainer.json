@@ -9,26 +9,22 @@
 			"extensions": [
 				"mtxr.sqltools-driver-pg",
 				"mtxr.sqltools",
-				"ms-python.python",
-				"ms-python.isort",
-				"ms-python.vscode-pylance",
-				"eamodio.gitlens"
+				"ms-python.flake8",
+				"ms-python.black-formatter",
+				"ms-python.python"
 			]
 		}
-	}
-
+	},
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/poetry:2": {}
+	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
-
+	"postCreateCommand": "curl --create-dirs -o $HOME/.postgresql/root.crt -O https://cockroachlabs.cloud/clusters/75d62802-e955-409b-8a17-fe7c6f7d2bbc/cert"
 	// Configure tool-specific properties.
 	// "customizations": {},
-
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 }

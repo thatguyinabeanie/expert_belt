@@ -53,6 +53,7 @@ class PhaseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Phase
+        fields = '__all__' 
 
 
 class TournamentRecordSerializer(serializers.ModelSerializer):

@@ -1,10 +1,9 @@
-from rest_framework.routers import DefaultRouter
 from expert_belt_api import views
 from django.urls import path, include
-
 from rest_framework import routers
 
-router = DefaultRouter()
+
+router = routers.DefaultRouter()
 router.register(r"users", views.UserViewSet)
 router.register(r"groups", views.GroupViewSet)
 router.register(r"tournaments", views.TournamentViewSet)

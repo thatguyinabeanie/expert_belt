@@ -1,0 +1,6 @@
+name: expert_belt_api
+services:
+- name: api
+  github:
+    repo: thatguyinabeanie/expert_belt
+    branch: codespaces
