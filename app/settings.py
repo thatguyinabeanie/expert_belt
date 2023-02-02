@@ -99,11 +99,7 @@ DATABASES = {
     },
 }
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "vgc-data-app.onrender.com",
-]
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 CORS_ORIGIN_WHITELIST = [
     "https://thatguyinabeanie-cuddly-fortnight-wrv7jgp5jr63jxp-8000.preview.app.github.dev",
