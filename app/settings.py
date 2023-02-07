@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "django_extensions",
     "django_filters",
     "corsheaders",
+    "django_crontab",
     # "health_check",
 ]
 
@@ -110,8 +111,8 @@ CORS_ORIGIN_WHITELIST = [
 CORS_ALLOW_METHODS = ["GET"]
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
     ],
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
@@ -174,3 +175,6 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+CRONJOBS = [("*/2 * * * *", "app.cron.load_data_from_limitless")]
