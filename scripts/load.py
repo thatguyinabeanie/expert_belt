@@ -19,7 +19,7 @@ environ.Env.read_env(os.path.join(BASE_DIR.parent, ".env"))
 # ./man ./m
 
 key = env("TOURS_API_KEY")
-limit = 1000
+limit = 10
 base_url = "https://play.limitlesstcg.com/ext/dinodata"
 tour_url = f"{base_url}/tournaments"
 tours_link = f"{tour_url}?key={key}&game=vgc&limit={limit}"
