@@ -15,15 +15,15 @@ router.register(r"matches", views.MatchViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
-    path(
-        "tournaments/<slug:tour_id>/players/",
-        views.TournamentPlayersViewSet.as_view({"get": "list"}),
-        name="tournament-players",
-    ),
-    path(
-        "tournaments/<slug:tour_id>/players/<slug:username>/",
-        views.TournamentPlayerViewSet.as_view({"get": "list"}),
-        name="tournament-players",
-    )
+    # path(
+    #     "tournaments/<slug:tour_id>/players/",
+    #     views.TournamentIDPlayersViewSet.as_view({"get": "list"}),
+    #     name="tournament-players",
+    # ),
+    # path(
+    #     "tournaments/<slug:tour_id>/players/<slug:username>/",
+    #     views.TournamentIDPlayersViewSet.as_view({"get": "list"}),
+    #     name="tournament-players-slug",
+    # )
     # path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
 ]

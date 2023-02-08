@@ -28,7 +28,7 @@ export class FormatsService {
     ): CancelablePromise<PaginatedFormatList> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/formats/',
+            url: '/formats/',
             query: {
                 'label': label,
                 'limit': limit,
@@ -48,7 +48,7 @@ export class FormatsService {
     ): CancelablePromise<Format> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/formats/',
+            url: '/formats/',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -64,7 +64,7 @@ export class FormatsService {
     ): CancelablePromise<Format> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/formats/{name}/',
+            url: '/formats/{name}/',
             path: {
                 'name': name,
             },
@@ -83,7 +83,7 @@ export class FormatsService {
     ): CancelablePromise<Format> {
         return __request(OpenAPI, {
             method: 'PUT',
-            url: '/api/formats/{name}/',
+            url: '/formats/{name}/',
             path: {
                 'name': name,
             },
@@ -104,7 +104,7 @@ export class FormatsService {
     ): CancelablePromise<Format> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/api/formats/{name}/',
+            url: '/formats/{name}/',
             path: {
                 'name': name,
             },
@@ -123,7 +123,7 @@ export class FormatsService {
     ): CancelablePromise<void> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/api/formats/{name}/',
+            url: '/formats/{name}/',
             path: {
                 'name': name,
             },

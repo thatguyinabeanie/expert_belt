@@ -29,7 +29,7 @@ export class UsersService {
     ): CancelablePromise<PaginatedUserList> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/users/',
+            url: '/users/',
             query: {
                 'id': id,
                 'limit': limit,
@@ -50,7 +50,7 @@ export class UsersService {
     ): CancelablePromise<User> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/users/',
+            url: '/users/',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -67,7 +67,7 @@ export class UsersService {
     ): CancelablePromise<User> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/users/{id}/',
+            url: '/users/{id}/',
             path: {
                 'id': id,
             },
@@ -87,7 +87,7 @@ export class UsersService {
     ): CancelablePromise<User> {
         return __request(OpenAPI, {
             method: 'PUT',
-            url: '/api/users/{id}/',
+            url: '/users/{id}/',
             path: {
                 'id': id,
             },
@@ -109,7 +109,7 @@ export class UsersService {
     ): CancelablePromise<User> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/api/users/{id}/',
+            url: '/users/{id}/',
             path: {
                 'id': id,
             },
@@ -129,7 +129,7 @@ export class UsersService {
     ): CancelablePromise<void> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/api/users/{id}/',
+            url: '/users/{id}/',
             path: {
                 'id': id,
             },

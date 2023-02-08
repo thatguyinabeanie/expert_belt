@@ -101,13 +101,14 @@ DATABASES = {
     },
 }
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+ALLOWED_HOSTS = os.getenv(
+    "DJANGO_ALLOWED_HOSTS", "https://expert-belt.vercel.app"
+).split(",")
 
-CORS_ORIGIN_WHITELIST = [
-    "https://thatguyinabeanie-cuddly-fortnight-wrv7jgp5jr63jxp-8000.preview.app.github.dev",
-    "http://localhost:3000",
-    "https://vgc-data-frontend.onrender.com",
-]
+CORS_ORIGIN_WHITELIST = os.getenv(
+    "DJANGO_CORS_ORIGIN_WHITELIST", "https://expert-belt.vercel.app"
+).split(",")
+
 
 CORS_ALLOW_METHODS = ["GET"]
 

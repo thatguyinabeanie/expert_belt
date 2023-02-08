@@ -28,7 +28,7 @@ export class OrganizersService {
     ): CancelablePromise<PaginatedOrganizerList> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/organizers/',
+            url: '/organizers/',
             query: {
                 'id': id,
                 'limit': limit,
@@ -48,7 +48,7 @@ export class OrganizersService {
     ): CancelablePromise<Organizer> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/organizers/',
+            url: '/organizers/',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -64,7 +64,7 @@ export class OrganizersService {
     ): CancelablePromise<Organizer> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/organizers/{id}/',
+            url: '/organizers/{id}/',
             path: {
                 'id': id,
             },
@@ -83,7 +83,7 @@ export class OrganizersService {
     ): CancelablePromise<Organizer> {
         return __request(OpenAPI, {
             method: 'PUT',
-            url: '/api/organizers/{id}/',
+            url: '/organizers/{id}/',
             path: {
                 'id': id,
             },
@@ -104,7 +104,7 @@ export class OrganizersService {
     ): CancelablePromise<Organizer> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/api/organizers/{id}/',
+            url: '/organizers/{id}/',
             path: {
                 'id': id,
             },
@@ -123,7 +123,7 @@ export class OrganizersService {
     ): CancelablePromise<void> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/api/organizers/{id}/',
+            url: '/organizers/{id}/',
             path: {
                 'id': id,
             },

@@ -38,7 +38,7 @@ export class RecordsService {
     ): CancelablePromise<PaginatedRecordList> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/records/',
+            url: '/records/',
             query: {
                 'drop': drop,
                 'limit': limit,
@@ -63,7 +63,7 @@ export class RecordsService {
     ): CancelablePromise<Record> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/records/',
+            url: '/records/',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -79,7 +79,7 @@ export class RecordsService {
     ): CancelablePromise<Record> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/records/{id}/',
+            url: '/records/{id}/',
             path: {
                 'id': id,
             },
@@ -98,7 +98,7 @@ export class RecordsService {
     ): CancelablePromise<Record> {
         return __request(OpenAPI, {
             method: 'PUT',
-            url: '/api/records/{id}/',
+            url: '/records/{id}/',
             path: {
                 'id': id,
             },
@@ -119,7 +119,7 @@ export class RecordsService {
     ): CancelablePromise<Record> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/api/records/{id}/',
+            url: '/records/{id}/',
             path: {
                 'id': id,
             },
@@ -138,7 +138,7 @@ export class RecordsService {
     ): CancelablePromise<void> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/api/records/{id}/',
+            url: '/records/{id}/',
             path: {
                 'id': id,
             },
