@@ -33,6 +33,9 @@ django-filter==22.1 ; python_version >= "3.10" and python_version < "4.0" \
 django==4.1.6 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:bceb0fe1a386781af0788cae4108622756cd05e7775448deec04a71ddf87685d \
     --hash=sha256:c6fe7ebe7c017fe59f1029821dae0acb5a2ddcd6c9a0138fd20a8bfefac914bc
+djangorestframework-api-key==2.3.0 ; python_version >= "3.10" and python_version < "4.0" \
+    --hash=sha256:c2fa61280069acd8dc0e9dd1840e0e1934a2a85631069326f4d1e3a91ca9aa9a \
+    --hash=sha256:eed94f383e96ca8f9f9e4182406fe28b5585629d0039f65cbb7e6e254778f674
 djangorestframework==3.14.0 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:579a333e6256b09489cbe0a067e66abe55c6595d8926be6b99423786334350c8 \
     --hash=sha256:eb63f58c9f218e1a7d064d17a70751f528ed4e1d35547fdade9aaf4cd103fd08
