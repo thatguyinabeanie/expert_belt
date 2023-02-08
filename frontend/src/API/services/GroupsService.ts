@@ -29,7 +29,7 @@ export class GroupsService {
     ): CancelablePromise<PaginatedGroupList> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/groups/',
+            url: '/groups/',
             query: {
                 'limit': limit,
                 'name': name,
@@ -50,7 +50,7 @@ export class GroupsService {
     ): CancelablePromise<Group> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/groups/',
+            url: '/groups/',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -67,7 +67,7 @@ export class GroupsService {
     ): CancelablePromise<Group> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/groups/{id}/',
+            url: '/groups/{id}/',
             path: {
                 'id': id,
             },
@@ -87,7 +87,7 @@ export class GroupsService {
     ): CancelablePromise<Group> {
         return __request(OpenAPI, {
             method: 'PUT',
-            url: '/api/groups/{id}/',
+            url: '/groups/{id}/',
             path: {
                 'id': id,
             },
@@ -109,7 +109,7 @@ export class GroupsService {
     ): CancelablePromise<Group> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/api/groups/{id}/',
+            url: '/groups/{id}/',
             path: {
                 'id': id,
             },
@@ -129,7 +129,7 @@ export class GroupsService {
     ): CancelablePromise<void> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/api/groups/{id}/',
+            url: '/groups/{id}/',
             path: {
                 'id': id,
             },

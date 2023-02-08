@@ -48,7 +48,7 @@ export class PhasesService {
     ): CancelablePromise<PaginatedPhaseList> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/phases/',
+            url: '/phases/',
             query: {
                 'advancing_min': advancingMin,
                 'auto_resolve': autoResolve,
@@ -78,7 +78,7 @@ export class PhasesService {
     ): CancelablePromise<Phase> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/phases/',
+            url: '/phases/',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -94,7 +94,7 @@ export class PhasesService {
     ): CancelablePromise<Phase> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/phases/{id}/',
+            url: '/phases/{id}/',
             path: {
                 'id': id,
             },
@@ -113,7 +113,7 @@ export class PhasesService {
     ): CancelablePromise<Phase> {
         return __request(OpenAPI, {
             method: 'PUT',
-            url: '/api/phases/{id}/',
+            url: '/phases/{id}/',
             path: {
                 'id': id,
             },
@@ -134,7 +134,7 @@ export class PhasesService {
     ): CancelablePromise<Phase> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/api/phases/{id}/',
+            url: '/phases/{id}/',
             path: {
                 'id': id,
             },
@@ -153,7 +153,7 @@ export class PhasesService {
     ): CancelablePromise<void> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/api/phases/{id}/',
+            url: '/phases/{id}/',
             path: {
                 'id': id,
             },

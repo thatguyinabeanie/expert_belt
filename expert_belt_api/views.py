@@ -44,7 +44,7 @@ class TournamentViewSet(viewsets.ModelViewSet):
     # permission_classes
 
 
-class TournamentPlayersViewSet(viewsets.ModelViewSet):
+class TournamentIDPlayersViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.UserSerializer
 
     def get_queryset(self):

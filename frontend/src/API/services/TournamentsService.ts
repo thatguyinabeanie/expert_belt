@@ -40,7 +40,7 @@ export class TournamentsService {
     ): CancelablePromise<PaginatedTournamentList> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/tournaments/',
+            url: '/tournaments/',
             query: {
                 'date': date,
                 'format': format,
@@ -66,7 +66,7 @@ export class TournamentsService {
     ): CancelablePromise<Tournament> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/api/tournaments/',
+            url: '/tournaments/',
             body: requestBody,
             mediaType: 'application/json',
         });
@@ -82,7 +82,7 @@ export class TournamentsService {
     ): CancelablePromise<Tournament> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/tournaments/{tournament_id}/',
+            url: '/tournaments/{tournament_id}/',
             path: {
                 'tournament_id': tournamentId,
             },
@@ -101,7 +101,7 @@ export class TournamentsService {
     ): CancelablePromise<Tournament> {
         return __request(OpenAPI, {
             method: 'PUT',
-            url: '/api/tournaments/{tournament_id}/',
+            url: '/tournaments/{tournament_id}/',
             path: {
                 'tournament_id': tournamentId,
             },
@@ -122,7 +122,7 @@ export class TournamentsService {
     ): CancelablePromise<Tournament> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/api/tournaments/{tournament_id}/',
+            url: '/tournaments/{tournament_id}/',
             path: {
                 'tournament_id': tournamentId,
             },
@@ -141,7 +141,7 @@ export class TournamentsService {
     ): CancelablePromise<void> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/api/tournaments/{tournament_id}/',
+            url: '/tournaments/{tournament_id}/',
             path: {
                 'tournament_id': tournamentId,
             },
