@@ -102,7 +102,8 @@ DATABASES = {
 }
 
 ALLOWED_HOSTS = os.getenv(
-    "DJANGO_ALLOWED_HOSTS", "https://expert-belt.vercel.app"
+    "DJANGO_ALLOWED_HOSTS",
+    "https://expert-belt.vercel.app,expert-belt-api-y4c5z.ondigitalocean.app",
 ).split(",")
 
 CORS_ORIGIN_WHITELIST = os.getenv(
