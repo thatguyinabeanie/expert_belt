@@ -422,6 +422,18 @@ django = ">=3.0"
 pytz = "*"
 
 [[package]]
+name = "djangorestframework-api-key"
+version = "2.3.0"
+description = "API key permissions for the Django REST Framework"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "djangorestframework-api-key-2.3.0.tar.gz", hash = "sha256:c2fa61280069acd8dc0e9dd1840e0e1934a2a85631069326f4d1e3a91ca9aa9a"},
+    {file = "djangorestframework_api_key-2.3.0-py3-none-any.whl", hash = "sha256:eed94f383e96ca8f9f9e4182406fe28b5585629d0039f65cbb7e6e254778f674"},
+]
+
+[[package]]
 name = "drf-nested-routers"
 version = "0.93.4"
 description = "Nested resources for the Django Rest Framework"
@@ -1413,4 +1425,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "b4db5ce7896e7fa1abfe6d32547af67d0177411a77f4aaf73075994c586769b8"
+content-hash = "ec1cda49159f2e80dc3e5848798297a73e19e9f6b40ebf3711209de4ee0d1bce"

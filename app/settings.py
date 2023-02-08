@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "django_filters",
     "corsheaders",
     "django_crontab",
+    "rest_framework_api_key",
     # "health_check",
 ]
 
